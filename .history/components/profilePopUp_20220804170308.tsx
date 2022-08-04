@@ -4,7 +4,7 @@ import styles from "./profilePopUp.module.css";
 import PopupComponent from "./popupComponent";
 import { Grid } from "@mui/material";
 
-// import ProfilePicture from "/assets/static/profile.png";
+import ProfilePicture from "/assets/static/profile.png";
 
 // Type definition for the props that are being passed in
 interface PopupProps {
