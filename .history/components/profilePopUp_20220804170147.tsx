@@ -4,14 +4,14 @@ import styles from "./profilePopUp.module.css";
 import PopupComponent from "./popupComponent";
 import { Grid } from "@mui/material";
 
-// import ProfilePicture from "/assets/static/profile.png";
+import ProfilePicture from "/assets/static/profile.png";
 
 // Type definition for the props that are being passed in
 interface PopupProps {
-  header: string,
-  description?: string,
-  content?: ReactElement,
-  initialToggled?: boolean
+    header: string,
+    description?: string,
+    content?: ReactElement,
+    initialToggled?: boolean
 }
 
 {
@@ -28,31 +28,18 @@ const Popup: NextPage = (props) => {
       {/* Format 1 */}
       <Grid container spacing={1}>
         <Grid item xs={4} style={{ background: "LightGrey" }}>
-          <img src="/assets/static/profile.png" alt="Profile picture"></img>
+          <img src="../public/assets/profile.png" alt="Profile picture"></img>
         </Grid>
         <Grid item xs={8} style={{ background: "Grey" }}>
           <h3>Name</h3>
-          <Grid item xs={8} style={{ background: "White" }}>
-            <p> John </p>
-          </Grid>
           <h4>Email</h4>
-          <Grid item xs={8} style={{ background: "White" }}>
-            <p> Example@email.com </p>
-          </Grid>
           <p>Progress bar</p>
-          <Grid item xs={8} style={{ background: "Green" }}>
-            <p> % Complete </p>
-          </Grid>
-          <p>Change password</p>
-          <Grid item xs={8} style={{ background: "White" }}>
-            <p> Enter new password </p>
-          </Grid>
-          <button onClick={() => { }}>Log out!</button>
+          <button onClick={() => {}}>Log out!</button>
         </Grid>
       </Grid>
     </>
   );
-  // const {header, description, content, initialToggled} = props;
+  // const { header, description, content, initialToggled } = props;
   // const [toggled, setToggled] = useState(initialToggled || false);
 
   return (

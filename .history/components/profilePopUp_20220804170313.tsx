@@ -8,10 +8,10 @@ import { Grid } from "@mui/material";
 
 // Type definition for the props that are being passed in
 interface PopupProps {
-  header: string,
-  description?: string,
-  content?: ReactElement,
-  initialToggled?: boolean
+    header: string,
+    description?: string,
+    content?: ReactElement,
+    initialToggled?: boolean
 }
 
 {
@@ -32,27 +32,14 @@ const Popup: NextPage = (props) => {
         </Grid>
         <Grid item xs={8} style={{ background: "Grey" }}>
           <h3>Name</h3>
-          <Grid item xs={8} style={{ background: "White" }}>
-            <p> John </p>
-          </Grid>
           <h4>Email</h4>
-          <Grid item xs={8} style={{ background: "White" }}>
-            <p> Example@email.com </p>
-          </Grid>
           <p>Progress bar</p>
-          <Grid item xs={8} style={{ background: "Green" }}>
-            <p> % Complete </p>
-          </Grid>
-          <p>Change password</p>
-          <Grid item xs={8} style={{ background: "White" }}>
-            <p> Enter new password </p>
-          </Grid>
-          <button onClick={() => { }}>Log out!</button>
+          <button onClick={() => {}}>Log out!</button>
         </Grid>
       </Grid>
     </>
   );
-  // const {header, description, content, initialToggled} = props;
+  // const { header, description, content, initialToggled } = props;
   // const [toggled, setToggled] = useState(initialToggled || false);
 
   return (
