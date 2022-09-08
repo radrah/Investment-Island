@@ -1,4 +1,5 @@
 Investment Island is an online quiz game to help begineer investors learn more about investing.
+The purpose of this project is to provide new and begineer developer to gain industry-level experience by going through the software development lifecycle with real-life applications. 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
