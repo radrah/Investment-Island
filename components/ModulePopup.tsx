@@ -12,6 +12,11 @@ const ModulePopup: NextPage = () => {
         return (
             <div className={styles.popup}>
                 <div className={styles.popup_content}>
+                <button className={styles.close_button} onClick={() => setCurrentModule(0)}>
+                        <span aria-hidden="true" className={styles.close_span} onClick={() => setCurrentModule(0)}> 
+                            &times;
+                        </span>
+                    </button>
                     <h4>{module.header}</h4>
                     <p>{module.body}</p>
                     {currentModule > 1 && <button onClick={() => {setCurrentModule((i) => i-1)}}>prev</button>}
