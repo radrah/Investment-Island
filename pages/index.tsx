@@ -6,6 +6,7 @@ import Welcome from "../components/popupComponent";
 import SignUpBox from "../components/SignUpBox";
 import HomeGridItem from "../components/HomeGridItem";
 import Quiz from "../components/quiz";
+import IslandImage from "../components/IslandImage";
 
 // The main entry point
 const Home: NextPage = () => {
@@ -19,6 +20,9 @@ const Home: NextPage = () => {
 
   return ( // Home page is here - currently all placeholder buttons and stuff until we get the art
     <>
+
+        <IslandImage/>
+
       <h1>Sign up placeholder here:</h1>
       <div>
         <SignUpBox />
@@ -33,57 +37,59 @@ const Home: NextPage = () => {
           content={content}
         />
       </div>
+
+
       <div>
-        <HomeGridItem 
+        <HomeGridItem
           section="Time Tundra"
           module1="Interest rates, and terms"
           module2="Managed funds (including retirement funds)"
           module3="Bonds (govt bonds, company bonds, bond maturity dates)"
           module4="Review"
-         />
-         <HomeGridItem 
+        />
+        <HomeGridItem
           section="Commodity Cave"
           module1="Commodity basics - why buy, storing value in items rather than money
           "
           module2="How to get into commodities - owning it, index funds, commodity funds"
           module3="Futures and futures based commodity funds -  what is a future?"
           module4="Review"
-         />
-         <HomeGridItem 
+        />
+        <HomeGridItem
           section="Property Plains"
           module1="Property basics, mortgages, capital gains"
           module2="Equity and leverage - using houses to buy more houses"
           module3="Renting, tenants, property management, yield"
           module4="Review"
-         />
-         <HomeGridItem 
+        />
+        <HomeGridItem
           section="Forex Forest"
           module1="How do you make money on forex, what influences forex"
           module2="Forex fundamentals, chart reading, bid-ask, pips"
           module3="Leverage and magnifying money, risks"
           module4="Review"
-         />
-         <HomeGridItem 
+        />
+        <HomeGridItem
           section="Crypto Cove"
           module1="What is crypto? What is the blockchain? How does this make me money?"
           module2="Crypto extended - wallets, addresses/hashes, gas fees, contracts"
           module3="Coins and derivatives, trading and virtual monkeys"
           module4="Review"
-         />
-         <HomeGridItem 
+        />
+        <HomeGridItem
           section="Stock Slopes"
           module1="Stock basics - public companies, what is a share, how does this help companies and people"
           module2="Mutual funds, index funds, etfs, what they are, diversification"
           module3="Options and futures (how does this differ from commodity futures)"
           module4="Review"
-         />
-         <HomeGridItem 
+        />
+        <HomeGridItem
           section="THE GRAND FINALE"
           module1=""
           module2=""
           module3=""
           module4=""
-         />
+        />
       </div>
 
     </>
