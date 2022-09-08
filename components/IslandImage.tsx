@@ -1,5 +1,3 @@
-import MCQpopup from "./MCQpopup";
-
 
 const IslandImage = () => {
 
