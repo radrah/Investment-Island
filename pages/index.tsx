@@ -1,15 +1,20 @@
 import type { NextPage } from "next";
-import { Grid } from '@mui/material';
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import Welcome from "../components/popupComponent";
 import SignUpBox from "../components/SignUpBox";
+import HomeGrid from "../components/HomeGrid";
+import { useRecoilState } from "recoil";
+import { currentPageState } from "../atoms/currentPageState";
+import ModulePopup from "../components/ModulePopup";
 import HomeGridItem from "../components/HomeGridItem";
 import Quiz from "../components/quiz";
 import IslandImage from "../components/IslandImage";
 
 // The main entry point
 const Home: NextPage = () => {
+  const [currentModule, setCurrentModule] = useRecoilState(currentPageState);
+
   const content = (
     <>
       <Link href="/disclaimer">
@@ -37,7 +42,8 @@ const Home: NextPage = () => {
           content={content}
         />
       </div>
-
+      <HomeGrid></HomeGrid>
+      <ModulePopup></ModulePopup>
 
       <div>
         <HomeGridItem

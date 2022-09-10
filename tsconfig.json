@@ -21,6 +21,6 @@
     "**/*.tsx",
     "pages/index.js",
     "firebase/clientApp.js"
-  ],
+, "components/HomeGrid.tsx"  ],
   "exclude": ["node_modules"]
 }
