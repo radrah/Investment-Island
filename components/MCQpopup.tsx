@@ -35,6 +35,12 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
     }
   };
 
+  const handleRestartButtonClick = () => {
+    setScore(0);
+    setCurrentQuestion(0);
+    setShowScore(false);
+  };
+
   return (
     <div className={styles.popup}>
       {toggled && (
@@ -57,8 +63,16 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
           {/* SECTION START */}
           <div className="quiz">
             {showScore ? (
-              <div className="score-section">
+              <div className={styles.score_section}>
                 You scored {score} out of {questions.length}
+                <br></br>
+                <Button
+                  className={styles.option_button}
+                  variant="outlined"
+                  onClick={handleRestartButtonClick}
+                >
+                  Restart
+                </Button>
               </div>
             ) : (
               <>
