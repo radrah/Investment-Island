@@ -44,6 +44,14 @@
   text-align: left;
 }
 
+.incorrect {
+  color: red;
+}
+
+.correct {
+  color: green;
+}
+
 /* Styling for the pop up component - we will probably want to move this / redo all styling later */
 
 .popup {
