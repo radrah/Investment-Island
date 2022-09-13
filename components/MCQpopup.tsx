@@ -87,11 +87,13 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                 <div className={styles.results}>
                   <p>Results:</p>
                   {/* Display results for each question */}
-                  {answerArray.map((answerNumber, index) => (
-                    <p>
-                      Q{index + 1} : {answerNumber}
-                    </p>
-                  ))}
+                  {answerArray.map((answerNumber, index) => {
+                    return answerNumber == 0 ? (
+                      <p>Q{index + 1} : incorrect</p>
+                    ) : (
+                      <p>Q{index + 1} : correct</p>
+                    );
+                  })}
                 </div>
                 {/* Restart button */}
                 <Button
