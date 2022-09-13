@@ -103,6 +103,10 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
               </>
             )}
           </div>
+          <div className={styles.nav_buttons_container}>
+            <Button className={styles.nav_button}>Previous question</Button>
+            <Button className={styles.nav_button}>Next question</Button>
+          </div>
           {/* SECTION END */}
           <div className={styles.nav_buttons_container}>
             <Button className={styles.nav_button}>Prev.</Button>
