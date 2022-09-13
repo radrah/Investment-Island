@@ -77,6 +77,7 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
           {/* SECTION START */}
           <div className="quiz">
             {showScore ? (
+              // Score page
               <div className={styles.score_section}>
                 You scored {score} out of {questions.length}
                 <br></br>
@@ -89,19 +90,20 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                 </Button>
               </div>
             ) : (
+              // Question page
               <>
                 <div className="question-section">
-                  {/* Show score for testing purposes - delete later */}
-                  <p>Score: {score}</p>
-                  <p>Answer array: {answerArray}</p>
+                  {/* Question number */}
                   <div className="question-count">
                     <span>Question {currentQuestion + 1}</span>/
                     {questions.length}
                   </div>
+                  {/* Question text */}
                   <div className="question-text">
                     {questions[currentQuestion].questionText}
                   </div>
                 </div>
+                {/* Answer options */}
                 <div className={styles.options_container}>
                   {questions[currentQuestion].answerOptions.map(
                     (answerOption) => (
@@ -120,7 +122,9 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
               </>
             )}
           </div>
+          {/* Question navigation buttons */}
           <div className={styles.nav_buttons_container}>
+            {/* Previous question button */}
             {currentQuestion > 0 && showScore == false && (
               <Button
                 className={styles.nav_button}
@@ -131,6 +135,7 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                 Previous question
               </Button>
             )}
+            {/* Next question button */}
             {currentQuestion < questions.length - 1 && showScore == false && (
               <Button
                 className={styles.nav_button}
@@ -141,6 +146,7 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                 Next question
               </Button>
             )}
+            {/* Show results button */}
             {currentQuestion == questions.length - 1 && showScore == false && (
               <Button
                 className={styles.nav_button}
