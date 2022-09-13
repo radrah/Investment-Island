@@ -24,7 +24,6 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
   const [answerArray, setAnswerArray] = useState(initialAnswerArray);
-  const [results, setResults] = useState("");
 
   // Update the answer array element corresponding to the current quesiton
   const updateAnswerArray = (change: number) => {
