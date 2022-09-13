@@ -27,12 +27,6 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
     if (isCorrect == true) {
       setScore(score + 1);
     }
-    const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questions.length) {
-      setCurrentQuestion(nextQuestion);
-    } else {
-      setShowScore(true);
-    }
   };
 
   const handleRestartButtonClick = () => {
@@ -77,6 +71,8 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
             ) : (
               <>
                 <div className="question-section">
+                  {/* Show score for testing purposes - delete later */}
+                  <p>Score: {score}</p>
                   <div className="question-count">
                     <span>Question {currentQuestion + 1}</span>/
                     {questions.length}
