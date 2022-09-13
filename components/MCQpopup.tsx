@@ -24,6 +24,7 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
   const [answerArray, setAnswerArray] = useState(initialAnswerArray);
+  const [results, setResults] = useState("");
 
   // Update the answer array element corresponding to the current quesiton
   const updateAnswerArray = (change: number) => {
@@ -55,6 +56,18 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
     setShowScore(false);
   };
 
+  const updateResults = () => {
+    var results = "";
+    for (var i = 0; i < answerArray.length; i++) {
+      if (answerArray[i] == 1) {
+        results = results + "Q" + (i + 1) + ": correct \n";
+      } else {
+        results = results + "Q" + (i + 1) + ": incorrect \n";
+      }
+    }
+    setResults(results);
+  };
+
   return (
     <div className={styles.popup}>
       {toggled && (
@@ -79,8 +92,14 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
             {showScore ? (
               // Score page
               <div className={styles.score_section}>
-                You scored {score} out of {questions.length}
+                <p>
+                  You scored {score} out of {questions.length}
+                </p>
                 <br></br>
+                <div className={styles.results}>
+                  <p>Results:</p>
+                  <p>{results}</p>
+                </div>
                 <Button
                   className={styles.option_button}
                   variant="outlined"
@@ -152,6 +171,7 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                 className={styles.nav_button}
                 onClick={() => {
                   setShowScore(true);
+                  updateResults();
                 }}
               >
                 Show results
