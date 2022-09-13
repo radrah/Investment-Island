@@ -104,8 +104,26 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
             )}
           </div>
           <div className={styles.nav_buttons_container}>
-            <Button className={styles.nav_button}>Previous question</Button>
-            <Button className={styles.nav_button}>Next question</Button>
+            {currentQuestion > 0 && showScore == false && (
+              <Button
+                className={styles.nav_button}
+                onClick={() => {
+                  setCurrentQuestion((i) => i - 1);
+                }}
+              >
+                Previous question
+              </Button>
+            )}
+            {currentQuestion < questions.length - 1 && showScore == false && (
+              <Button
+                className={styles.nav_button}
+                onClick={() => {
+                  setCurrentQuestion((i) => i + 1);
+                }}
+              >
+                Next question
+              </Button>
+            )}
           </div>
           {/* SECTION END */}
           <div className={styles.nav_buttons_container}>
