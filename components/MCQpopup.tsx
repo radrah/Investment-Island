@@ -124,6 +124,16 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                 Next question
               </Button>
             )}
+            {currentQuestion == questions.length - 1 && showScore == false && (
+              <Button
+                className={styles.nav_button}
+                onClick={() => {
+                  setShowScore(true);
+                }}
+              >
+                Show results
+              </Button>
+            )}
           </div>
           {/* SECTION END */}
           <div className={styles.nav_buttons_container}>
