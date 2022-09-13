@@ -18,20 +18,40 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
   const [toggled, setToggled] = useState(initialToggled || false);
 
   const questions = quizData;
+  const initialAnswerArray = new Array(questions.length).fill(0);
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
+  const [answerArray, setAnswerArray] = useState(initialAnswerArray);
+
+  // Update the answer array element corresponding to the current quesiton
+  const updateAnswerArray = (change: number) => {
+    setAnswerArray((answerArray) => {
+      return [
+        ...answerArray.slice(0, currentQuestion),
+        answerArray[currentQuestion] + change,
+        ...answerArray.slice(currentQuestion + 1),
+      ];
+    });
+  };
 
   const handleAnswerButtonClick = (isCorrect: boolean) => {
-    if (isCorrect == true) {
+    // Selected right answer for first time
+    if (isCorrect == true && answerArray[currentQuestion] == 0) {
       setScore(score + 1);
+      updateAnswerArray(1);
+      // Selected wrong answer after selecting right answer first
+    } else if (isCorrect == false && answerArray[currentQuestion] == 1) {
+      setScore(score - 1);
+      updateAnswerArray(-1);
     }
   };
 
   const handleRestartButtonClick = () => {
     setScore(0);
     setCurrentQuestion(0);
+    setAnswerArray(initialAnswerArray);
     setShowScore(false);
   };
 
@@ -73,6 +93,7 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                 <div className="question-section">
                   {/* Show score for testing purposes - delete later */}
                   <p>Score: {score}</p>
+                  <p>Answer array: {answerArray}</p>
                   <div className="question-count">
                     <span>Question {currentQuestion + 1}</span>/
                     {questions.length}
