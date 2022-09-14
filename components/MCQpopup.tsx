@@ -2,6 +2,8 @@ import type { NextPage } from 'next'
 import { ReactElement, useState } from 'react';
 import { Button } from '@mui/material';
 import styles from "./MCQpopup.module.css";
+import { useRecoilState } from "recoil";
+import { currentPageState } from "../atoms/currentPageState";
 
 // Type definition for the props that are being passed in
 interface MCQprops {
@@ -13,6 +15,7 @@ interface MCQprops {
 
 // Background popup for investment island 
 const MCQpopup: NextPage<MCQprops> = props => {
+    const [currentPage, setCurrentPage] = useRecoilState(currentPageState);
     const { header, description, content, initialToggled } = props;
     const [toggled, setToggled] = useState(initialToggled || false);
 
