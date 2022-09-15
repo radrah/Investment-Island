@@ -73,9 +73,6 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
               &times;
             </span>
           </button>
-          <h1 className={styles.header}>{header}</h1>
-          <hr className={styles.separator} />
-          <p className={styles.description}>{description}</p>
           {/* SECTION START */}
           <div className="quiz">
             {showScore ? (
@@ -118,6 +115,7 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                   </div>
                 </div>
                 <Grid container className={styles.main_grid}>
+                  {/* Picture */}
                   <Grid item xs={6}>
                     <p>test</p>
                   </Grid>
@@ -138,7 +136,13 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                         </Grid>
                       )
                     )}
-                    {/* Question navigation buttons */}
+                  </Grid>
+                  {/* Module info */}
+                  <Grid item xs={6}>
+                    <p>{header}</p>
+                  </Grid>
+                  {/* Question navigation buttons */}
+                  <Grid item xs={6}>
                     {/* Back question button */}
                     <div className={styles.nav_buttons_container}>
                       {showScore == false &&
