@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { ReactElement, useState } from "react";
-import { Button } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import styles from "./MCQpopup.module.css";
 import quizData from "./quiz.json";
 import { useRecoilState } from "recoil";
@@ -121,22 +121,29 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                     {questions[currentQuestion].questionText}
                   </div>
                 </div>
-                {/* Answer options */}
-                <div className={styles.options_container}>
-                  {questions[currentQuestion].answerOptions.map(
-                    (answerOption) => (
-                      <Button
-                        className={styles.option_button}
-                        variant="outlined"
-                        onClick={() =>
-                          handleAnswerButtonClick(answerOption.isCorrect)
-                        }
-                      >
-                        {answerOption.answerText}
-                      </Button>
-                    )
-                  )}
-                </div>
+                <Grid container className={styles.main_grid}>
+                  <Grid item xs={6}>
+                    <p>test</p>
+                  </Grid>
+                  {/* Answer options */}
+                  <Grid item xs={6}>
+                    {questions[currentQuestion].answerOptions.map(
+                      (answerOption) => (
+                        <Grid>
+                          <Button
+                            className={styles.option_button}
+                            variant="outlined"
+                            onClick={() =>
+                              handleAnswerButtonClick(answerOption.isCorrect)
+                            }
+                          >
+                            {answerOption.answerText}
+                          </Button>
+                        </Grid>
+                      )
+                    )}
+                  </Grid>
+                </Grid>
               </>
             )}
           </div>
