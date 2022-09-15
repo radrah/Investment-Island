@@ -58,6 +58,14 @@
   border: 2px solid blue;
 }
 
+.question_text {
+  /* font-family: "Baloo 2"; */
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  text-align: center;
+}
+
 /* Styling for the pop up component - we will probably want to move this / redo all styling later */
 
 .popup {

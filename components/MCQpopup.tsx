@@ -111,13 +111,9 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
               // Question page
               <>
                 <div className="question-section">
-                  {/* Question number */}
-                  <div className="question-count">
-                    <span>Question {currentQuestion + 1}</span>/
-                    {questions.length}
-                  </div>
-                  {/* Question text */}
-                  <div className="question-text">
+                  {/* Question number and text*/}
+                  <div className={styles.question_text}>
+                    <span>Q{currentQuestion + 1}</span>/{questions.length}:{" "}
                     {questions[currentQuestion].questionText}
                   </div>
                 </div>
