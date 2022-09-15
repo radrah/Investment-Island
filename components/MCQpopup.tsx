@@ -187,7 +187,7 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
 
       {
         <button onClick={() => setToggled(!toggled)}>
-          Click to toggle popup!
+          Click to toggle quiz!
         </button>
       }
     </div>
