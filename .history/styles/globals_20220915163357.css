@@ -15,6 +15,7 @@ a {
   box-sizing: border-box;
 }
 
+
 /* Need to move this styling into a separate sheet for the island-svg */
 #island-svg {
   display: block;
@@ -22,14 +23,12 @@ a {
   width: 60%;
 }
 
-.island-section-svg {
-  fill-opacity: 0;
+.island-section-svg{
+  fill-opacity: 0.0;
 }
 
-.island-section-svg:hover {
+.island-section-svg:hover{
   stroke: rgb(255, 247, 96);
   stroke-width: 10px;
   cursor: pointer;
 }
-
-/* Chuck the css for the profile button here*/

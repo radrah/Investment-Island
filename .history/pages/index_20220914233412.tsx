@@ -29,8 +29,6 @@ const Home: NextPage = () => {
     <>
       <IslandImage />
 
-      {/* Make button for profile here */}
-
       <h2>Profile</h2>
       <Profile
         header="Profile"

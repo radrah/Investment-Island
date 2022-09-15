@@ -3,6 +3,8 @@ import { ReactElement, useState } from "react";
 import { Button } from "@mui/material";
 import styles from "./MCQpopup.module.css";
 import quizData from "./quiz.json";
+import { useRecoilState } from "recoil";
+import { currentPageState } from "../atoms/currentPageState";
 
 // Type definition for the props that are being passed in
 interface MCQprops {
