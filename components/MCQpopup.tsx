@@ -139,21 +139,26 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                       )
                     )}
                     {/* Question navigation buttons */}
+                    {/* Back question button */}
                     <div className={styles.nav_buttons_container}>
-                      {/* Previous question button */}
-                      {currentQuestion > 0 && showScore == false && (
-                        <Button
-                          className={styles.nav_button}
-                          onClick={() => {
-                            setCurrentQuestion((i) => i - 1);
-                          }}
-                        >
-                          &lt; Back
-                        </Button>
-                      )}
+                      {showScore == false &&
+                        (currentQuestion > 0 ? (
+                          <Button
+                            className={styles.nav_button}
+                            onClick={() => {
+                              setCurrentQuestion((i) => i - 1);
+                            }}
+                          >
+                            &lt; Back
+                          </Button>
+                        ) : (
+                          <Button className={styles.nav_button} disabled={true}>
+                            &lt; Back
+                          </Button>
+                        ))}
                       {/* Next question button */}
-                      {currentQuestion < questions.length - 1 &&
-                        showScore == false && (
+                      {showScore == false &&
+                        (currentQuestion < questions.length - 1 ? (
                           <Button
                             className={styles.nav_button}
                             onClick={() => {
@@ -162,19 +167,16 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                           >
                             Next &gt;
                           </Button>
-                        )}
-                      {/* Show results button */}
-                      {currentQuestion == questions.length - 1 &&
-                        showScore == false && (
+                        ) : (
                           <Button
                             className={styles.nav_button}
                             onClick={() => {
                               setShowScore(true);
                             }}
                           >
-                            Show results
+                            Finish &gt;
                           </Button>
-                        )}
+                        ))}
                     </div>
                   </Grid>
                 </Grid>
