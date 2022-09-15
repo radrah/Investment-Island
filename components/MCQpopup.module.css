@@ -28,6 +28,8 @@
 .option_button {
   flex-basis: 40%;
   margin: 3px;
+  width: 100%;
+  border-radius: 50px;
   /* background-color: #E4E4E4; */
 }
 
