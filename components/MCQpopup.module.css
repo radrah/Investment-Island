@@ -73,6 +73,13 @@
   text-align: center;
 }
 
+.quiz_image {
+  display: block;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Styling for the pop up component - we will probably want to move this / redo all styling later */
 
 .popup {

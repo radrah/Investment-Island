@@ -118,6 +118,11 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                   {/* Picture */}
                   <Grid item xs={6}>
                     <p>test</p>
+                    <img
+                      src="/assets/static/demo-quiz-image.png"
+                      alt="Quiz image"
+                      className={styles.quiz_image}
+                    ></img>
                   </Grid>
                   {/* Answer options */}
                   <Grid item xs={6}>
