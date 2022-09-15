@@ -138,45 +138,47 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                         </Grid>
                       )
                     )}
+                    {/* Question navigation buttons */}
+                    <div className={styles.nav_buttons_container}>
+                      {/* Previous question button */}
+                      {currentQuestion > 0 && showScore == false && (
+                        <Button
+                          className={styles.nav_button}
+                          onClick={() => {
+                            setCurrentQuestion((i) => i - 1);
+                          }}
+                        >
+                          &lt; Back
+                        </Button>
+                      )}
+                      {/* Next question button */}
+                      {currentQuestion < questions.length - 1 &&
+                        showScore == false && (
+                          <Button
+                            className={styles.nav_button}
+                            onClick={() => {
+                              setCurrentQuestion((i) => i + 1);
+                            }}
+                          >
+                            Next &gt;
+                          </Button>
+                        )}
+                      {/* Show results button */}
+                      {currentQuestion == questions.length - 1 &&
+                        showScore == false && (
+                          <Button
+                            className={styles.nav_button}
+                            onClick={() => {
+                              setShowScore(true);
+                            }}
+                          >
+                            Show results
+                          </Button>
+                        )}
+                    </div>
                   </Grid>
                 </Grid>
               </>
-            )}
-          </div>
-          {/* Question navigation buttons */}
-          <div className={styles.nav_buttons_container}>
-            {/* Previous question button */}
-            {currentQuestion > 0 && showScore == false && (
-              <Button
-                className={styles.nav_button}
-                onClick={() => {
-                  setCurrentQuestion((i) => i - 1);
-                }}
-              >
-                Previous question
-              </Button>
-            )}
-            {/* Next question button */}
-            {currentQuestion < questions.length - 1 && showScore == false && (
-              <Button
-                className={styles.nav_button}
-                onClick={() => {
-                  setCurrentQuestion((i) => i + 1);
-                }}
-              >
-                Next question
-              </Button>
-            )}
-            {/* Show results button */}
-            {currentQuestion == questions.length - 1 && showScore == false && (
-              <Button
-                className={styles.nav_button}
-                onClick={() => {
-                  setShowScore(true);
-                }}
-              >
-                Show results
-              </Button>
             )}
           </div>
           {/* SECTION END */}
