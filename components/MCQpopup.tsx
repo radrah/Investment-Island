@@ -144,7 +144,7 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                   </Grid>
                   {/* Module info */}
                   <Grid item xs={6}>
-                    <p>{header}</p>
+                    <p className={styles.module_caption}>{header}</p>
                   </Grid>
                   {/* Question navigation buttons */}
                   <Grid item xs={6}>

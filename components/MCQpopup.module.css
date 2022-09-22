@@ -80,6 +80,16 @@
   margin-right: auto;
 }
 
+.module_caption {
+  flex-basis: 40%;
+  margin: 3px;
+  width: auto;
+  border-radius: 50px;
+  background-color: grey;
+  padding: 10px;
+  text-align: center;
+}
+
 /* Styling for the pop up component - we will probably want to move this / redo all styling later */
 
 .popup {
