@@ -31,6 +31,18 @@ const Home: NextPage = () => {
   return (
     // Home page is here - currently all placeholder buttons and stuff until we get the art
     <>
+      {/* Make button for profile here */}
+
+      <div className="profileButton">
+        <div className="profileButtonPic">
+          image
+          <div className="imageCircle">
+          </div>
+        </div>
+        <div className="profileButtonWords">
+          Sign in or Register to view progress!
+        </div>
+      </div>
 
       <h2>Profile</h2>
       <Profile

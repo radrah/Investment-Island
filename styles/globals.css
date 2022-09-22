@@ -23,12 +23,46 @@ a {
   width: 60%;
 }
 
-.island-section-svg{
+.island-section-svg {
   fill-opacity: 0.0;
 }
 
-.island-section-svg:hover{
+.island-section-svg:hover {
   stroke: rgb(255, 247, 96);
   stroke-width: 10px;
   cursor: pointer;
+}
+
+/* Chuck the css for the profile button here*/
+.profileButton {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: green;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 240px;
+  border: 3px solid #73AD21;
+  border-radius: 4px;
+}
+
+.profileButtonPic {
+  text-align: center;
+  padding: 10px;
+  background-color: blue;
+  width: 70px;
+}
+
+.profileButtonWords {
+  text-align: center;
+  padding: 10px;
+  background-color: white;
+  width: 170px;
+}
+
+.imageCircle {
+  background-color: #2ecc71;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
