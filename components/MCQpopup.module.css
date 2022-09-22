@@ -29,6 +29,7 @@
 
 .option_button {
   font-family: "Baloo 2";
+  font-size: 16px;
   flex-basis: 40%;
   margin: 5px;
   width: 100%;
@@ -38,6 +39,14 @@
   color: #03045e;
 }
 
+.option_letter {
+  border-radius: 70px;
+  font-weight: 800;
+  font-size: 16px;
+  background-color: #0077b6;
+  color: white;
+}
+
 .nav_buttons_container {
   display: flex;
   justify-content: space-between;
@@ -45,6 +54,7 @@
 
 .nav_button {
   font-family: "Baloo 2";
+  font-weight: 800;
   flex-basis: 40%;
   margin: 3px;
   width: 100%;
@@ -87,6 +97,7 @@
 
 .module_caption {
   font-family: "Baloo 2";
+  font-size: 14px;
   color: 03045E;
   flex-basis: 40%;
   margin: 3px;
@@ -95,13 +106,6 @@
   padding: 10px;
   text-align: center;
   background-color: white;
-}
-
-.option_letter {
-  border-radius: 70px;
-  font-weight: 800;
-  background-color: #0077b6;
-  color: white;
 }
 
 /* Styling for the pop up component - we will probably want to move this / redo all styling later */
