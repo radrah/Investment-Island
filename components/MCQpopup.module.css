@@ -30,11 +30,12 @@
 .option_button {
   font-family: "Baloo 2";
   flex-basis: 40%;
-  margin: 3px;
+  margin: 5px;
   width: 100%;
   border-radius: 50px;
   padding: 10px;
-  /* background-color: #E4E4E4; */
+  background-color: white;
+  color: #03045e;
 }
 
 .nav_buttons_container {
@@ -48,6 +49,8 @@
   margin: 3px;
   width: 100%;
   border-radius: 50px;
+  background-color: #ffffffe5;
+  color: #03045e;
 }
 
 .score_section {
@@ -66,16 +69,13 @@
   color: green;
 }
 
-.main_grid {
-  border: 2px solid blue;
-}
-
 .question_text {
   font-family: "Baloo 2";
   font-style: normal;
   font-weight: 600;
   font-size: 30px;
   text-align: center;
+  color: white;
 }
 
 .quiz_image {
@@ -87,19 +87,21 @@
 
 .module_caption {
   font-family: "Baloo 2";
+  color: 03045E;
   flex-basis: 40%;
   margin: 3px;
   width: auto;
   border-radius: 50px;
-  background-color: grey;
   padding: 10px;
   text-align: center;
+  background-color: white;
 }
 
 .option_letter {
-  background-color: grey;
   border-radius: 70px;
   font-weight: 800;
+  background-color: #0077b6;
+  color: white;
 }
 
 /* Styling for the pop up component - we will probably want to move this / redo all styling later */
@@ -112,7 +114,7 @@
 }
 
 .popup_content {
-  background-color: white;
+  background-color: #0077b6;
   /* position: absolute; */
   top: 20%;
   left: 30%;
