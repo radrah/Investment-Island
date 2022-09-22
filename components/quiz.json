@@ -2,37 +2,37 @@
   {
     "questionText": "QuestionText1",
     "answerOptions": [
-      { "answerText": "(A)", "isCorrect": false },
-      { "answerText": "(B)", "isCorrect": false },
-      { "answerText": "((C))", "isCorrect": true },
-      { "answerText": "(D)", "isCorrect": false }
+      { "answerText": "(A)", "isCorrect": false, "answerLetter": "A" },
+      { "answerText": "(B)", "isCorrect": false, "answerLetter": "B" },
+      { "answerText": "((C))", "isCorrect": true, "answerLetter": "C" },
+      { "answerText": "(D)", "isCorrect": false, "answerLetter": "D" }
     ]
   },
   {
     "questionText": "QuestionText2",
     "answerOptions": [
-      { "answerText": "(A)", "isCorrect": false },
-      { "answerText": "((B))", "isCorrect": true },
-      { "answerText": "(C)", "isCorrect": false },
-      { "answerText": "(D)", "isCorrect": false }
+      { "answerText": "(A)", "isCorrect": false, "answerLetter": "A" },
+      { "answerText": "((B))", "isCorrect": true, "answerLetter": "B" },
+      { "answerText": "(C)", "isCorrect": false, "answerLetter": "C" },
+      { "answerText": "(D)", "isCorrect": false, "answerLetter": "D" }
     ]
   },
   {
     "questionText": "QuestionText3",
     "answerOptions": [
-      { "answerText": "((A))", "isCorrect": true },
-      { "answerText": "(B)", "isCorrect": false },
-      { "answerText": "(C)", "isCorrect": false },
-      { "answerText": "(D)", "isCorrect": false }
+      { "answerText": "((A))", "isCorrect": true, "answerLetter": "A" },
+      { "answerText": "(B)", "isCorrect": false, "answerLetter": "B" },
+      { "answerText": "(C)", "isCorrect": false, "answerLetter": "C" },
+      { "answerText": "(D)", "isCorrect": false, "answerLetter": "D" }
     ]
   },
   {
     "questionText": "QuestionText4",
     "answerOptions": [
-      { "answerText": "(A)", "isCorrect": false },
-      { "answerText": "(B)", "isCorrect": false },
-      { "answerText": "(C)", "isCorrect": false },
-      { "answerText": "((D))", "isCorrect": true }
+      { "answerText": "(A)", "isCorrect": false, "answerLetter": "A" },
+      { "answerText": "(B)", "isCorrect": false, "answerLetter": "B" },
+      { "answerText": "(C)", "isCorrect": false, "answerLetter": "C" },
+      { "answerText": "((D))", "isCorrect": true, "answerLetter": "D" }
     ]
   }
 ]

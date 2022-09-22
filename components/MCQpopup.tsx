@@ -135,7 +135,12 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                               handleAnswerButtonClick(answerOption.isCorrect)
                             }
                           >
-                            {answerOption.answerText}
+                            <Grid item xs={3}>
+                              <div>{answerOption.answerLetter}</div>
+                            </Grid>
+                            <Grid item xs={9}>
+                              {answerOption.answerText}
+                            </Grid>
                           </Button>
                         </Grid>
                       )
