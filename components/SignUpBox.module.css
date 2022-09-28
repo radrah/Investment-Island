@@ -12,7 +12,7 @@
     width: 67.5vw;
     height: 62vh;
     background-color: #0077B6;
-    border: 5px solid #FFFFFF;
+    /* border: 5px solid #FFFFFF;  removed cause no border line in figma file */
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
@@ -25,10 +25,64 @@
     border-radius: 1rem;
     width: 45%;
     height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    text-align: center;
+}
+
+.credentials_box p{
+    margin: 1%;
+    margin-top:3%;
 }
 
 .button {
     background-color: #FFFFFF;
-    border-radius: 1rem;
+    border-radius: 2rem;
     color: #03045E;
+    margin-top: 2.5%;
+    font-size: 1rem;
+    padding: 1.5%;
+    width: 35%;
+}
+
+#cursor {
+    cursor:pointer;
+}
+
+.input_field {
+    background: rgba(204, 228, 240, 0.8);;
+    border-style: none;
+    padding: 2%;
+    position:relative;
+    width:75%;
+    margin:2%;
+    border-radius: 25px;
+}
+
+.dot {
+    background-color: #0077B6;
+    height: 40%;
+    width: 30%;
+    position: absolute;
+    border-radius: 50%;
+    /* display: inline-block; */
+    top: -20%;
+    /* align-self: center;*/
+}
+
+/* Avatar */
+/* .avatar {
+    margin:auto;
+    width: 90%;
+    height: 100%;
+    position:relative;
+} */
+
+.MuiAvatar-root.MuiAvatar-circular.MuiAvatar-colorDefault.css-w6dwt4-MuiAvatar-root {
+    width: 90%;
+    height: 90%;
+    margin: 3% auto;
 }

@@ -1,7 +1,12 @@
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Typography from '@mui/material/Typography';
-import TextField from '@mui/material';
+import {TextField} from '@mui/material';
+import Avatar from '@mui/material/Avatar';
+import GoogleIcon from '@mui/icons-material/Google';
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
+import LockPersonIcon from '@mui/icons-material/LockPerson';
+
 import createUser, {
   createFacebookUser,
   createUserGoogle,
@@ -38,14 +43,26 @@ export default function SignUpBox() {
       >
         <div className={styles.popup}>
           <div className={styles.credentials_box}>
-            <Typography>credentials</Typography>
+          <span className={styles.dot}>
+            <Avatar className={styles.avatar} src="/broken-image.jpg" />
+          </span>
+            <Typography>
+              {/* credentials */}
+            {/* <TextField id="filled-basic" className={styles.input_field} label="Username" variant="filled" size="small"/>
+            <TextField id="filled-basic" label="Password" variant="filled" size="small"/> */}
+            <input type="text" className={styles.input_field} placeholder='Username'>
+            </input>
+            <input type="password" className={styles.input_field} placeholder='Password'></input>
+            <p>Don't have an account?</p>
+            <p id="cursor">Register here!</p>
+            </Typography>
           </div>
 
           <Button variant="contained" className={styles.button}>
-            Sign in with Google
+            <GoogleIcon/> Sign in with Google
           </Button>
           <Button variant="contained" className={styles.button}>
-            Sign in with Facebook
+            <FacebookRoundedIcon/>Sign in with Facebook
           </Button>
         </div>
       </Modal>
