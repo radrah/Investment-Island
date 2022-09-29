@@ -87,10 +87,10 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                   {answerArray.map((answerNumber, index) => {
                     return answerNumber == 0 ? (
                       <p className={styles.incorrect}>
-                        Q{index + 1} : incorrect
+                        Q{index + 1} : ✘ incorrect
                       </p>
                     ) : (
-                      <p className={styles.correct}>Q{index + 1} : correct</p>
+                      <p className={styles.correct}>Q{index + 1} : ✓ correct</p>
                     );
                   })}
                 </div>
