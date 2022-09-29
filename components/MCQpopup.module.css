@@ -80,19 +80,25 @@
 
 .score_section {
   text-align: center;
+  font-family: "Baloo 2";
+  font-weight: 800;
+  font-size: 24px;
+  color: white;
 }
 
 .results {
   text-align: left;
+  font-family: "Baloo 2";
+  font-size: 16px;
 }
 
-.incorrect {
+/* .incorrect {
   color: red;
 }
 
 .correct {
   color: green;
-}
+} */
 
 .question_text {
   font-family: "Baloo 2";

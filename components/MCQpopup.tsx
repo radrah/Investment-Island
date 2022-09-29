@@ -81,9 +81,8 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                 <p>
                   You scored {score} out of {questions.length}
                 </p>
-                <br></br>
+
                 <div className={styles.results}>
-                  <p>Results:</p>
                   {/* Display results for each question */}
                   {answerArray.map((answerNumber, index) => {
                     return answerNumber == 0 ? (
