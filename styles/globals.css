@@ -37,31 +37,29 @@ a {
 .profileButton {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: green;
+  background-color: white;
   position: absolute;
   top: 0;
   right: 0;
-  width: 240px;
-  border: 3px solid #73AD21;
-  border-radius: 4px;
+  width: 210px;
+  border-radius: 40px;
+  border: 3px solid #0077B6;
 }
 
 .profileButtonPic {
   text-align: center;
   padding: 10px;
-  background-color: blue;
-  width: 70px;
+  width: 40px;
 }
 
 .profileButtonWords {
   text-align: center;
   padding: 10px;
-  background-color: white;
   width: 170px;
 }
 
 .imageCircle {
-  background-color: #2ecc71;
+  background-color: lightblue;
   width: 40px;
   height: 40px;
   border-radius: 50%;

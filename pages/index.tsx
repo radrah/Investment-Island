@@ -35,7 +35,6 @@ const Home: NextPage = () => {
 
       <div className="profileButton">
         <div className="profileButtonPic">
-          image
           <div className="imageCircle">
           </div>
         </div>
