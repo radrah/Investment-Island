@@ -21,11 +21,15 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
 
   const questions = quizData;
   const initialAnswerArray = new Array(questions.length).fill(0);
+  const initialAnswerSaveArray = new Array(questions.length).fill("");
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
   const [answerArray, setAnswerArray] = useState(initialAnswerArray);
+  const [answerSaveArray, setAnswerSaveArray] = useState(
+    initialAnswerSaveArray
+  );
 
   // Update the answer array element corresponding to the current quesiton
   const updateAnswerArray = (change: number) => {
@@ -38,7 +42,22 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
     });
   };
 
-  const handleAnswerButtonClick = (isCorrect: boolean) => {
+  // Update the answer save array element corresponding to the current quesiton
+  const updateAnswerSaveArray = (change: string) => {
+    setAnswerSaveArray((answerSaveArray) => {
+      return [
+        ...answerSaveArray.slice(0, currentQuestion),
+        change,
+        ...answerSaveArray.slice(currentQuestion + 1),
+      ];
+    });
+  };
+
+  const handleAnswerButtonClick = (
+    isCorrect: boolean,
+    answerLetter: string
+  ) => {
+    updateAnswerSaveArray(answerLetter);
     // Selected right answer for first time
     if (isCorrect == true && answerArray[currentQuestion] == 0) {
       setScore(score + 1);
@@ -55,6 +74,10 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
     setCurrentQuestion(0);
     setAnswerArray(initialAnswerArray);
     setShowScore(false);
+  };
+
+  const checkSelected = (currentLetter: string, selectedLetter: string) => {
+    return currentLetter == selectedLetter ? styles.opacity_change : "";
   };
 
   return (
@@ -125,14 +148,30 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                   </Grid>
                   {/* Answer options */}
                   <Grid item xs={6}>
+                    <p>{answerSaveArray}</p>
                     {questions[currentQuestion].answerOptions.map(
                       (answerOption) => (
                         <Grid>
                           <Button
-                            className={styles.option_button}
+                            className={
+                              styles.option_button +
+                              " " +
+                              checkSelected(
+                                answerOption.answerLetter,
+                                answerSaveArray[currentQuestion]
+                              )
+                            }
+                            // className={
+                            //   styles.option_button + " " + styles.opacity_change
+                            // }
+                            // className={answerOption.answerLetter == answerSaveArray[currentQuestion] ? {styles.option_button} : {styles.nav_button}}
+                            // className={styles.option_button}
                             variant="outlined"
                             onClick={() =>
-                              handleAnswerButtonClick(answerOption.isCorrect)
+                              handleAnswerButtonClick(
+                                answerOption.isCorrect,
+                                answerOption.answerLetter
+                              )
                             }
                           >
                             <Grid item xs={2}>
