@@ -148,7 +148,6 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                   </Grid>
                   {/* Answer options */}
                   <Grid item xs={6}>
-                    <p>{answerSaveArray}</p>
                     {questions[currentQuestion].answerOptions.map(
                       (answerOption) => (
                         <Grid>
@@ -161,11 +160,6 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                                 answerSaveArray[currentQuestion]
                               )
                             }
-                            // className={
-                            //   styles.option_button + " " + styles.opacity_change
-                            // }
-                            // className={answerOption.answerLetter == answerSaveArray[currentQuestion] ? {styles.option_button} : {styles.nav_button}}
-                            // className={styles.option_button}
                             variant="outlined"
                             onClick={() =>
                               handleAnswerButtonClick(
@@ -226,6 +220,7 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                             className={styles.nav_button}
                             onClick={() => {
                               setShowScore(true);
+                              setAnswerSaveArray(initialAnswerSaveArray);
                             }}
                           >
                             Finish &gt;
