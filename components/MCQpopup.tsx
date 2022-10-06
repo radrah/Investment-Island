@@ -21,7 +21,7 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
 
   const questions = quizData;
   const initialAnswerArray = new Array(questions.length).fill(0);
-  const initialAnswerSaveArray = new Array(questions.length).fill("");
+  const initialAnswerSaveArray = new Array(questions.length).fill(" ");
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -30,6 +30,8 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
   const [answerSaveArray, setAnswerSaveArray] = useState(
     initialAnswerSaveArray
   );
+
+  const correctArray = initialAnswerSaveArray;
 
   // Update the answer array element corresponding to the current quesiton
   const updateAnswerArray = (change: number) => {
@@ -74,6 +76,7 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
     setCurrentQuestion(0);
     setAnswerArray(initialAnswerArray);
     setShowScore(false);
+    setAnswerSaveArray(initialAnswerSaveArray);
   };
 
   const checkSelected = (currentLetter: string, selectedLetter: string) => {
@@ -110,10 +113,12 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                   {answerArray.map((answerNumber, index) => {
                     return answerNumber == 0 ? (
                       <p className={styles.incorrect}>
-                        Q{index + 1} : ✘ incorrect
+                        Q{index + 1} : {answerSaveArray[index]} ✘
                       </p>
                     ) : (
-                      <p className={styles.correct}>Q{index + 1} : ✓ correct</p>
+                      <p className={styles.correct}>
+                        Q{index + 1} : {answerSaveArray[index]} ✓
+                      </p>
                     );
                   })}
                 </div>
@@ -220,7 +225,6 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                             className={styles.nav_button}
                             onClick={() => {
                               setShowScore(true);
-                              setAnswerSaveArray(initialAnswerSaveArray);
                             }}
                           >
                             Finish &gt;
