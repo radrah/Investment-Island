@@ -42,26 +42,29 @@ export default function SignUpBox() {
         aria-describedby="modal-modal-description"
       >
         <div className={styles.popup}>
-          <div className={styles.credentials_box}>
-            <Avatar className={styles.avatar} src="/broken-image.jpg" />
+            <div className={styles.credentials_box}>
+            {/* <Avatar className={styles.avatar} src="/broken-image.jpg" />  */}
+            <img className={styles.avatar} src="/public/assets/static/user.png"></img>
             <Typography>
-              {/* credentials */}
-            <TextField label="Username" size="small" className={styles.input_field}/>
-            <TextField label="Password" size="small" className={styles.input_field}/>
-            <p>Don't have an account?</p>
-            <p id="cursor">Register here!</p>
+                {/* credentials */}
+              <TextField variant="standard" placeholder="Username" size="small" className={styles.input_field} 
+                InputProps={{disableUnderline: true}}/>
+              <TextField variant="standard" placeholder="Password" size="small" className={styles.input_field}              
+                InputProps={{disableUnderline: true}}/>
+              <p>Don't have an account?</p>
+              <p id="cursor">Register here!</p>
             </Typography>
           </div>
 
           <Button variant="contained" className={styles.button}>
-            <GoogleIcon/> Sign in with Google
+          <img src="/public/assets/static/google.png"></img> Sign in with Google
           </Button>
           <Button variant="contained" className={styles.button}>
-            <FacebookRoundedIcon/>Sign in with Facebook
+          <img src="/public/assets/static/facebook.png"></img>Sign in with Facebook
           </Button>
         </div>
       </Modal>
-      {/* <input
+      /* <input
         type="email"
         name="email"
         placeholder="Email"
@@ -95,7 +98,7 @@ export default function SignUpBox() {
         }}
       >
         Sign Up With Facebook
-      </button> */}
+      </button> */
     </div>
   );
 }
