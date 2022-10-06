@@ -5,11 +5,13 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import Welcome from "../components/popupComponent";
 import SignUpBox from "../components/SignUpBox";
+//import HomeGridItem from "../components/HomeGridItem";
 import Profile from "../components/profile/profilePopUp";
 import HomeGrid from "../components/HomeGrid";
 import { useRecoilState } from "recoil";
 import { currentPageState } from "../atoms/currentPageState";
 import ModulePopup from "../components/ModulePopup";
+//import HomeGridItem from "../components/HomeGridItem";
 
 import Quiz from "../components/quiz";
 import IslandImage from "../components/IslandImage";

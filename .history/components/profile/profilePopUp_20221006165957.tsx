@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import { ReactElement, useState } from "react";
 import styles from "./profilePopUp.module.css";
-import PopupComponent from "./popupComponent";
 import { Grid } from "@mui/material";
 import { LinearProgress } from "@mui/material";
 import React from "react";
@@ -24,6 +23,9 @@ interface PopupProps {
 const Popup: NextPage = (props) => {
   // const [progress, setProgress] = React.useState(100);
   const progressNumber = 50;
+
+  // const { header, description, content, initialToggled } = props;
+  const [toggled, setToggled] = useState(false);
 
   const content = (
     <>
@@ -71,17 +73,42 @@ const Popup: NextPage = (props) => {
       </Grid>
     </>
   );
-  // const {header, description, content, initialToggled} = props;
-  // const [toggled, setToggled] = useState(initialToggled || false);
 
   return (
     <div>
-      <PopupComponent
-        header="Profile Page"
-        description="Test description for profile"
-        content={content}
-        initialToggled={true}
-      />
+      <div className={styles.popup}>
+        {toggled && (
+          <div className={styles.popup_content}>
+            <button
+              className={styles.close_button}
+              onClick={() => setToggled(false)}
+            >
+              <span
+                aria-hidden="true"
+                className={styles.close_span}
+                onClick={() => setToggled(false)}
+              >
+                &times;
+              </span>
+            </button>
+            <h1 className={styles.header}>Profile Page</h1>
+            <hr className={styles.separator} />
+            <p className={styles.description}>Test description for profile</p>
+            {content}
+          </div>
+        )}
+
+        {
+          <div className="profileButton" onClick={() => setToggled(!toggled)}>
+            <div className="profileButtonPic">
+              <div className="imageCircle"></div>
+            </div>
+            <div className="profileButtonWords">
+              Sign in or Register to view progress!
+            </div>
+          </div>
+        }
+      </div>
     </div>
   );
 };
