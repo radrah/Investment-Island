@@ -1,18 +1,13 @@
 import type { NextPage } from "next";
-import { Grid } from "@mui/material";
-
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import Welcome from "../components/popupComponent";
 import SignUpBox from "../components/SignUpBox";
-//import HomeGridItem from "../components/HomeGridItem";
-import Profile from "../components/profile/profilePopUp";
 import HomeGrid from "../components/HomeGrid";
 import { useRecoilState } from "recoil";
 import { currentPageState } from "../atoms/currentPageState";
 import ModulePopup from "../components/ModulePopup";
 //import HomeGridItem from "../components/HomeGridItem";
-
 import Quiz from "../components/quiz";
 import IslandImage from "../components/IslandImage";
 import Profile from "../components/profilePopUp";
@@ -32,13 +27,6 @@ const Home: NextPage = () => {
   return (
     // Home page is here - currently all placeholder buttons and stuff until we get the art
     <>
-      <Profile
-        header="Profile"
-        description="This is your profile"
-        content={content}
-        initialToggled={false}
-      />
-
       <IslandImage />
 
       {/* Make button for profile here */}
@@ -64,7 +52,6 @@ const Home: NextPage = () => {
           content={content}
         />
       </div>
-
       <HomeGrid></HomeGrid>
       <ModulePopup></ModulePopup>
     </>

@@ -1,0 +1,39 @@
+[
+  {
+    "questionText": "QuestionText1",
+    "answerOptions": [
+      { "answerText": "(A)", "isCorrect": false },
+      { "answerText": "(B)", "isCorrect": false },
+      { "answerText": "((C))", "isCorrect": true },
+      { "answerText": "(D)", "isCorrect": false }
+    ]
+  },
+  {
+    "questionText": "QuestionText2",
+    "answerOptions": [
+      { "answerText": "(A)", "isCorrect": false },
+      { "answerText": "((B))", "isCorrect": true },
+      { "answerText": "(C)", "isCorrect": false },
+      { "answerText": "(D)", "isCorrect": false }
+    ]
+  },
+  {
+    "questionText": "QuestionText3",
+    "answerOptions": [
+      { "answerText": "((A))", "isCorrect": true },
+      { "answerText": "(B)", "isCorrect": false },
+      { "answerText": "(C)", "isCorrect": false },
+      { "answerText": "(D)", "isCorrect": false }
+    ]
+  },
+  {
+    "questionText": "QuestionText4",
+    "answerOptions": [
+      { "answerText": "(A)", "isCorrect": false },
+      { "answerText": "(B)", "isCorrect": false },
+      { "answerText": "(C)", "isCorrect": false },
+      { "answerText": "((D))", "isCorrect": true }
+    ]
+  }
+]
+
