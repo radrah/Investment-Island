@@ -25,9 +25,6 @@ const Popup: NextPage = (props) => {
   // const [progress, setProgress] = React.useState(100);
   const progressNumber = 50;
 
-  // const { header, description, content, initialToggled } = props;
-  const [toggled, setToggled] = useState(true || false);
-
   const content = (
     <>
       {/* WRITE THE HTML FOR PROFILE HERE */}
@@ -75,6 +72,9 @@ const Popup: NextPage = (props) => {
     </>
   );
 
+  // const { header, description, content, initialToggled } = props;
+  const [toggled, setToggled] = useState(initialToggled || false);
+
   return (
     <div>
       <PopupComponent
@@ -106,16 +106,11 @@ const Popup: NextPage = (props) => {
           </div>
         )}
 
-        {
-          <div className="profileButton" onClick={() => setToggled(!toggled)}>
-            <div className="profileButtonPic">
-              <div className="imageCircle"></div>
-            </div>
-            <div className="profileButtonWords">
-              Sign in or Register to view progress!
-            </div>
-          </div>
-        }
+        {!toggled && (
+          <button onClick={() => setToggled(!toggled)}>
+            Click to toggle popup!
+          </button>
+        )}
       </div>
     </div>
   );

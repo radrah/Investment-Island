@@ -26,7 +26,7 @@ const Popup: NextPage = (props) => {
   const progressNumber = 50;
 
   // const { header, description, content, initialToggled } = props;
-  const [toggled, setToggled] = useState(true || false);
+  const [toggled, setToggled] = useState(initialToggled || false);
 
   const content = (
     <>
@@ -106,16 +106,11 @@ const Popup: NextPage = (props) => {
           </div>
         )}
 
-        {
-          <div className="profileButton" onClick={() => setToggled(!toggled)}>
-            <div className="profileButtonPic">
-              <div className="imageCircle"></div>
-            </div>
-            <div className="profileButtonWords">
-              Sign in or Register to view progress!
-            </div>
-          </div>
-        }
+        {!toggled && (
+          <button onClick={() => setToggled(!toggled)}>
+            Click to toggle popup!
+          </button>
+        )}
       </div>
     </div>
   );

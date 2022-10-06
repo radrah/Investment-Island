@@ -7,6 +7,7 @@ import { LinearProgress } from "@mui/material";
 import React from "react";
 import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
+import styles from "./popupComponent.module.css";
 
 // Type definition for the props that are being passed in
 interface PopupProps {
@@ -24,9 +25,6 @@ interface PopupProps {
 const Popup: NextPage = (props) => {
   // const [progress, setProgress] = React.useState(100);
   const progressNumber = 50;
-
-  // const { header, description, content, initialToggled } = props;
-  const [toggled, setToggled] = useState(true || false);
 
   const content = (
     <>
@@ -74,6 +72,11 @@ const Popup: NextPage = (props) => {
       </Grid>
     </>
   );
+  // const {header, description, content, initialToggled} = props;
+  // const [toggled, setToggled] = useState(initialToggled || false);
+
+  const { header, description, content, initialToggled } = props;
+  const [toggled, setToggled] = useState(initialToggled || false);
 
   return (
     <div>
@@ -106,16 +109,11 @@ const Popup: NextPage = (props) => {
           </div>
         )}
 
-        {
-          <div className="profileButton" onClick={() => setToggled(!toggled)}>
-            <div className="profileButtonPic">
-              <div className="imageCircle"></div>
-            </div>
-            <div className="profileButtonWords">
-              Sign in or Register to view progress!
-            </div>
-          </div>
-        }
+        {!toggled && (
+          <button onClick={() => setToggled(!toggled)}>
+            Click to toggle popup!
+          </button>
+        )}
       </div>
     </div>
   );
