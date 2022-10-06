@@ -35,7 +35,7 @@ const Home: NextPage = () => {
         header="Profile"
         description="This is your profile"
         content={content}
-        initialToggled={false}
+        initialToggled={true}
       />
 
       <IslandImage />
