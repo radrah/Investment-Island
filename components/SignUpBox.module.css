@@ -17,27 +17,32 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding: 2.5rem 0;
+    justify-content: space-between;
 }
 
 .credentials_box {
     background-color: #FFFFFF;
     border-radius: 1rem;
     width: 45%;
-    height: 40%;
+    height: 55%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     position:relative;
     text-align: center;
-    padding-top: 3rem;
+    padding: 4.5rem 1rem 1rem;
     margin-top: 3rem;
 }
 
-.credentials_box p {
-    margin: 1%;
-    margin-top:3%;
+.avatar {
+    position: absolute;
+    height: 6rem;
+    width: 6rem;
+    left: 50%;
+    margin-left: -3rem;
+    top: -3rem;
 }
 
 .button {
@@ -46,8 +51,7 @@
     text-transform: none;
     border-radius: 2rem;
     color: #03045E;
-    margin-top: 2.5%;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     padding: 1.5%;
     width: 35%;
     height: 4.125rem;
@@ -59,37 +63,28 @@
 
 .logo {
     height: 3rem;
-    margin-right: 3rem;
+    margin-right: 2.9rem;
 }
 
-#cursor {
-    cursor:pointer;
-}
-
-.input_field {
-    background-color: #CCE4F0;
+.input_box {
+    background-color: rgba(204, 228, 240, 0.8);
     border-style: none;
-    padding: 0.3rem;
+    padding: 0 0.9rem;
     position:relative;
-    width:63%;
-    margin:2%;
-    border-radius: 25px;
+    width: 65%;
+    border-radius: 1.5rem;
     outline:none;
     display: flex;
     align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.register_link {
+    font-size: 1rem;
+    color: #0077B6;
 }
 
 .credentials_icon {
-    width: 1.125rem;
-    margin: 0 0.5rem;
-}
-
-/* Avatar */
-.avatar {
-    position: absolute;
-    height: 6rem;
-    width: 6rem;
-    left: 50%;
-    margin-left: -3rem;
-    top: -3rem;
+    width: 1.3rem;
+    margin-right: 0.8rem;
 }
