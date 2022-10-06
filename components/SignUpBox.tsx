@@ -3,7 +3,7 @@ import Modal from '@mui/material/Modal';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Avatar from '@mui/material/Avatar';
-import GoogleIcon from '@mui/icons-material/Google';
+// import GoogleIcon from '/assets/static/google.png';
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import LockPersonIcon from '@mui/icons-material/LockPerson';
 
@@ -43,8 +43,7 @@ export default function SignUpBox() {
       >
         <div className={styles.popup}>
             <div className={styles.credentials_box}>
-            {/* <Avatar className={styles.avatar} src="/broken-image.jpg" />  */}
-            <img className={styles.avatar} src="/public/assets/static/user.png"></img>
+            <img className={styles.avatar} src="assets/static/user.png"></img>
             <Typography>
                 {/* credentials */}
               <TextField variant="standard" placeholder="Username" size="small" className={styles.input_field} 
@@ -57,10 +56,10 @@ export default function SignUpBox() {
           </div>
 
           <Button variant="contained" className={styles.button}>
-          <img src="/public/assets/static/google.png"></img> Sign in with Google
+          <img src="assets/static/google.png" className={styles.icon}></img><span>Sign in with Google</span>
           </Button>
           <Button variant="contained" className={styles.button}>
-          <img src="/public/assets/static/facebook.png"></img>Sign in with Facebook
+          <img src="assets/static/facebook.png" className={styles.icon}></img><span>Sign in with Facebook</span>
           </Button>
         </div>
       </Modal>
