@@ -2,10 +2,7 @@ import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
-import Avatar from '@mui/material/Avatar';
-// import GoogleIcon from '/assets/static/google.png';
-import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
-import LockPersonIcon from '@mui/icons-material/LockPerson';
+import Link from '@mui/material/Link'
 
 import createUser, {
   createFacebookUser,
@@ -43,23 +40,26 @@ export default function SignUpBox() {
       >
         <div className={styles.popup}>
             <div className={styles.credentials_box}>
-            <img className={styles.avatar} src="assets/static/user.png"></img>
-            <Typography>
-                {/* credentials */}
-              <TextField variant="standard" placeholder="Username" size="small" className={styles.input_field} 
+              <img className={styles.avatar} src="assets/static/user.png"></img>
+              <div className={styles.input_field}>
+                <img src="assets/static/mini_user.png" className={styles.credentials_icon}></img>
+                <TextField variant="standard" placeholder="Username" size="small"  
                 InputProps={{disableUnderline: true}}/>
-              <TextField variant="standard" placeholder="Password" size="small" className={styles.input_field}              
+              </div>
+              <div className={styles.input_field}>
+              <img src="assets/static/padlock.png" className={styles.credentials_icon}></img>
+                <TextField variant="standard" placeholder="Password" size="small"              
                 InputProps={{disableUnderline: true}}/>
-              <p>Don't have an account?</p>
-              <p id="cursor">Register here!</p>
-            </Typography>
+              </div>
+              <Typography>Don't have an account?</Typography>
+              <Link component="button" onClick={() => {}}>Register here!</Link>
           </div>
 
           <Button variant="contained" className={styles.button}>
-          <img src="assets/static/google.png" className={styles.icon}></img><span>Sign in with Google</span>
+          <img src="assets/static/google.png" className={styles.logo}></img><span>Sign in with Google</span>
           </Button>
           <Button variant="contained" className={styles.button}>
-          <img src="assets/static/facebook.png" className={styles.icon}></img><span>Sign in with Facebook</span>
+          <img src="assets/static/facebook.png" className={styles.logo}></img><span>Sign in with Facebook</span>
           </Button>
         </div>
       </Modal>

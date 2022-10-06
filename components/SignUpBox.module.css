@@ -12,7 +12,7 @@
     width: 67.5vw;
     height: 67.5vh;
     background-color: #0077B6;
-    border: 5px solid #FFFFFF;  /* removed cause no border line in figma file */
+    border: 5px solid #FFFFFF;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
@@ -32,9 +32,10 @@
     position:relative;
     text-align: center;
     padding-top: 3rem;
+    margin-top: 3rem;
 }
 
-.credentials_box p{
+.credentials_box p {
     margin: 1%;
     margin-top:3%;
 }
@@ -56,7 +57,7 @@
     justify-content: flex-start;
 }
 
-.icon {
+.logo {
     height: 3rem;
     margin-right: 3rem;
 }
@@ -68,14 +69,19 @@
 .input_field {
     background-color: #CCE4F0;
     border-style: none;
-    /* padding: 1%; */
+    padding: 0.3rem;
     position:relative;
     width:63%;
-    height:16%;
     margin:2%;
     border-radius: 25px;
     outline:none;
-    color:white;
+    display: flex;
+    align-items: center;
+}
+
+.credentials_icon {
+    width: 1.125rem;
+    margin: 0 0.5rem;
 }
 
 /* Avatar */
