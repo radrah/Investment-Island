@@ -3,6 +3,7 @@ import { useRecoilState } from "recoil";
 import { currentPageState } from "../atoms/currentPageState";
 import moduleContent from "../moduleContent.js";
 import styles from "./popupComponent.module.css";
+import MCQpopup from "./MCQpopup";
 
 // Background popup for investment island
 const ModulePopup: NextPage = () => {
@@ -26,6 +27,7 @@ const ModulePopup: NextPage = () => {
           </button>
           <h4>{module.header}</h4>
           <p>{module.body}</p>
+          <MCQpopup header={module.header} description={module.body} />
           {currentModule > 1 && (
             <button
               onClick={() => {

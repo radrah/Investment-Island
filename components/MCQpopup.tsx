@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { ReactElement, useState } from "react";
-import { Button } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import styles from "./MCQpopup.module.css";
 import quizData from "./quiz.json";
 import { useRecoilState } from "recoil";
@@ -21,11 +21,17 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
 
   const questions = quizData;
   const initialAnswerArray = new Array(questions.length).fill(0);
+  const initialAnswerSaveArray = new Array(questions.length).fill(" ");
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
   const [answerArray, setAnswerArray] = useState(initialAnswerArray);
+  const [answerSaveArray, setAnswerSaveArray] = useState(
+    initialAnswerSaveArray
+  );
+
+  const correctArray = initialAnswerSaveArray;
 
   // Update the answer array element corresponding to the current quesiton
   const updateAnswerArray = (change: number) => {
@@ -38,7 +44,22 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
     });
   };
 
-  const handleAnswerButtonClick = (isCorrect: boolean) => {
+  // Update the answer save array element corresponding to the current quesiton
+  const updateAnswerSaveArray = (change: string) => {
+    setAnswerSaveArray((answerSaveArray) => {
+      return [
+        ...answerSaveArray.slice(0, currentQuestion),
+        change,
+        ...answerSaveArray.slice(currentQuestion + 1),
+      ];
+    });
+  };
+
+  const handleAnswerButtonClick = (
+    isCorrect: boolean,
+    answerLetter: string
+  ) => {
+    updateAnswerSaveArray(answerLetter);
     // Selected right answer for first time
     if (isCorrect == true && answerArray[currentQuestion] == 0) {
       setScore(score + 1);
@@ -55,6 +76,11 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
     setCurrentQuestion(0);
     setAnswerArray(initialAnswerArray);
     setShowScore(false);
+    setAnswerSaveArray(initialAnswerSaveArray);
+  };
+
+  const checkSelected = (currentLetter: string, selectedLetter: string) => {
+    return currentLetter == selectedLetter ? styles.opacity_change : "";
   };
 
   return (
@@ -73,9 +99,6 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
               &times;
             </span>
           </button>
-          <h1 className={styles.header}>{header}</h1>
-          <hr className={styles.separator} />
-          <p className={styles.description}>{description}</p>
           {/* SECTION START */}
           <div className="quiz">
             {showScore ? (
@@ -84,17 +107,18 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
                 <p>
                   You scored {score} out of {questions.length}
                 </p>
-                <br></br>
+
                 <div className={styles.results}>
-                  <p>Results:</p>
                   {/* Display results for each question */}
                   {answerArray.map((answerNumber, index) => {
                     return answerNumber == 0 ? (
                       <p className={styles.incorrect}>
-                        Q{index + 1} : incorrect
+                        Q{index + 1} : {answerSaveArray[index]} ✘
                       </p>
                     ) : (
-                      <p className={styles.correct}>Q{index + 1} : correct</p>
+                      <p className={styles.correct}>
+                        Q{index + 1} : {answerSaveArray[index]} ✓
+                      </p>
                     );
                   })}
                 </div>
@@ -111,83 +135,115 @@ const MCQpopup: NextPage<MCQprops> = (props) => {
               // Question page
               <>
                 <div className="question-section">
-                  {/* Question number */}
-                  <div className="question-count">
-                    <span>Question {currentQuestion + 1}</span>/
-                    {questions.length}
-                  </div>
-                  {/* Question text */}
-                  <div className="question-text">
+                  {/* Question number and text*/}
+                  <div className={styles.question_text}>
+                    <span>Q{currentQuestion + 1}</span>/{questions.length}:{" "}
                     {questions[currentQuestion].questionText}
                   </div>
                 </div>
-                {/* Answer options */}
-                <div className={styles.options_container}>
-                  {questions[currentQuestion].answerOptions.map(
-                    (answerOption) => (
-                      <Button
-                        className={styles.option_button}
-                        variant="outlined"
-                        onClick={() =>
-                          handleAnswerButtonClick(answerOption.isCorrect)
-                        }
-                      >
-                        {answerOption.answerText}
-                      </Button>
-                    )
-                  )}
-                </div>
+                {/* Main grid */}
+                <Grid container>
+                  {/* Picture */}
+                  <Grid item xs={6}>
+                    <img
+                      src="/assets/static/demo-quiz-image.png"
+                      alt="Quiz image"
+                      className={styles.quiz_image}
+                    ></img>
+                  </Grid>
+                  {/* Answer options */}
+                  <Grid item xs={6}>
+                    {questions[currentQuestion].answerOptions.map(
+                      (answerOption) => (
+                        <Grid>
+                          <Button
+                            className={
+                              styles.option_button +
+                              " " +
+                              checkSelected(
+                                answerOption.answerLetter,
+                                answerSaveArray[currentQuestion]
+                              )
+                            }
+                            variant="outlined"
+                            onClick={() =>
+                              handleAnswerButtonClick(
+                                answerOption.isCorrect,
+                                answerOption.answerLetter
+                              )
+                            }
+                          >
+                            <Grid item xs={2}>
+                              <div className={styles.option_letter}>
+                                {answerOption.answerLetter}
+                              </div>
+                            </Grid>
+                            <Grid item xs={10}>
+                              {answerOption.answerText}
+                            </Grid>
+                          </Button>
+                        </Grid>
+                      )
+                    )}
+                  </Grid>
+                  {/* Module info */}
+                  <Grid item xs={6}>
+                    <p className={styles.module_caption}>{header}</p>
+                  </Grid>
+                  {/* Question navigation buttons */}
+                  <Grid item xs={6}>
+                    {/* Back question button */}
+                    <div className={styles.nav_buttons_container}>
+                      {showScore == false &&
+                        (currentQuestion > 0 ? (
+                          <Button
+                            className={styles.nav_button}
+                            onClick={() => {
+                              setCurrentQuestion((i) => i - 1);
+                            }}
+                          >
+                            &lt; Back
+                          </Button>
+                        ) : (
+                          <Button className={styles.nav_button} disabled={true}>
+                            &lt; Back
+                          </Button>
+                        ))}
+                      {/* Next question button */}
+                      {showScore == false &&
+                        (currentQuestion < questions.length - 1 ? (
+                          <Button
+                            className={styles.nav_button}
+                            onClick={() => {
+                              setCurrentQuestion((i) => i + 1);
+                            }}
+                          >
+                            Next &gt;
+                          </Button>
+                        ) : (
+                          <Button
+                            className={styles.nav_button}
+                            onClick={() => {
+                              setShowScore(true);
+                            }}
+                          >
+                            Finish &gt;
+                          </Button>
+                        ))}
+                    </div>
+                  </Grid>
+                </Grid>
               </>
             )}
           </div>
-          {/* Question navigation buttons */}
-          <div className={styles.nav_buttons_container}>
-            {/* Previous question button */}
-            {currentQuestion > 0 && showScore == false && (
-              <Button
-                className={styles.nav_button}
-                onClick={() => {
-                  setCurrentQuestion((i) => i - 1);
-                }}
-              >
-                Previous question
-              </Button>
-            )}
-            {/* Next question button */}
-            {currentQuestion < questions.length - 1 && showScore == false && (
-              <Button
-                className={styles.nav_button}
-                onClick={() => {
-                  setCurrentQuestion((i) => i + 1);
-                }}
-              >
-                Next question
-              </Button>
-            )}
-            {/* Show results button */}
-            {currentQuestion == questions.length - 1 && showScore == false && (
-              <Button
-                className={styles.nav_button}
-                onClick={() => {
-                  setShowScore(true);
-                }}
-              >
-                Show results
-              </Button>
-            )}
-          </div>
           {/* SECTION END */}
-          <div className={styles.nav_buttons_container}>
-            <Button className={styles.nav_button}>Prev.</Button>
-            <Button className={styles.nav_button}>Next</Button>
-          </div>
           {content}
         </div>
       )}
 
       {
         <button onClick={() => setToggled(!toggled)}>
-          Click to toggle popup!
+          Click to toggle quiz!
         </button>
       }
     </div>
