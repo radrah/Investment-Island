@@ -1,12 +1,7 @@
 {
   "compilerOptions": {
-    "checkJs": false,
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -25,7 +20,7 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/index.js",
-    "firebase/clientApp.js",
-    "components/HomeGrid.tsx"],
+    "firebase/clientApp.js"
+  ],
   "exclude": ["node_modules"]
 }
