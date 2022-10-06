@@ -5,11 +5,13 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import Welcome from "../components/popupComponent";
 import SignUpBox from "../components/SignUpBox";
-import Profile from "../components/profile/profilePopUp";
+//import HomeGridItem from "../components/HomeGridItem";
+import Profile from "../components/profilePopUp";
 import HomeGrid from "../components/HomeGrid";
 import { useRecoilState } from "recoil";
 import { currentPageState } from "../atoms/currentPageState";
 import ModulePopup from "../components/ModulePopup";
+//import HomeGridItem from "../components/HomeGridItem";
 
 import Quiz from "../components/quiz";
 import IslandImage from "../components/IslandImage";
@@ -29,6 +31,18 @@ const Home: NextPage = () => {
   return (
     // Home page is here - currently all placeholder buttons and stuff until we get the art
     <>
+      {/* Make button for profile here */}
+
+      <div className="profileButton">
+        <div className="profileButtonPic">
+          <div className="imageCircle"></div>
+        </div>
+        <div className="profileButtonWords">
+          Sign in or Register to view progress!
+        </div>
+      </div>
+
+      <h2>Profile</h2>
       <Profile
         header="Profile"
         description="This is your profile"
