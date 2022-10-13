@@ -1,0 +1,90 @@
+.signup_button {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 67.5vw;
+    height: 67.5vh;
+    background-color: #0077B6;
+    border: 5px solid #FFFFFF;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 0;
+    justify-content: space-between;
+}
+
+.credentials_box {
+    background-color: #FFFFFF;
+    border-radius: 1rem;
+    width: 45%;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position:relative;
+    text-align: center;
+    padding: 4.5rem 1rem 1rem;
+    margin-top: 3rem;
+}
+
+.avatar {
+    position: absolute;
+    height: 6rem;
+    width: 6rem;
+    left: 50%;
+    margin-left: -3rem;
+    top: -3rem;
+}
+
+.button {
+    background-color: #FFFFFF;
+    box-shadow: none;
+    text-transform: none;
+    border-radius: 2rem;
+    color: #03045E;
+    font-size: 1.3rem;
+    padding: 1.5%;
+    width: 35%;
+    height: 4.125rem;
+    font-weight: 600; 
+    display: flex;  
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logo {
+    height: 3rem;
+    margin-right: 2.9rem;
+}
+
+.input_box {
+    background-color: rgba(204, 228, 240, 0.8);
+    border-style: none;
+    padding: 0 0.9rem;
+    position:relative;
+    width: 65%;
+    border-radius: 1.5rem;
+    outline:none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.register_link {
+    font-size: 1rem;
+    color: #0077B6;
+}
+
+.credentials_icon {
+    width: 1.3rem;
+    margin-right: 0.8rem;
+}
