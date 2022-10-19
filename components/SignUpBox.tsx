@@ -77,29 +77,34 @@ export default function SignUpBox() {
                   InputProps={{disableUnderline: true}}
                 />
             </div>
-            <Typography sx={{fontSize: '1.2rem'}}>Don't have an account?</Typography>
-            <Link
-              component="button"
-              variant="body1"
-              onClick={() => { }}
-              sx={{
-                fontWeight: 600,
-                fontSize: '1.2rem'
-              }}
-            >
-              Register here!
-            </Link>
+            <div>
+              <Typography display="inline" sx={{ fontSize: '1.2rem' }}>Don't have an account? </Typography>
+              <Link
+                component="button"
+                variant="body1"
+                color="#0077B6"
+                display="inline"
+                onClick={() => { }}
+                sx={{
+                  fontWeight: 600,
+                  fontSize: '1.2rem'
+                }}
+              >
+                Register here!
+              </Link>
+            </div>
+            <Button className={styles.sign_in_button}>Sign in</Button>
           </div>
 
-          <Button variant="contained" className={styles.button}>
+          <Button variant="contained" className={styles.sign_in_with_button}>
           <img src="assets/static/google.png" className={styles.logo}></img><span>Sign in with Google</span>
           </Button>
-          <Button variant="contained" className={styles.button}>
-          <img src="assets/static/facebook.png" className={styles.logo}></img><span>Sign in with Facebook</span>
+          <Button variant="contained" className={styles.sign_in_with_button}>
+            <img src="assets/static/facebook.png" className={styles.logo}></img><span>Sign in with Facebook</span>
           </Button>
         </div>
       </Modal>
-      /* <input
+      {/* <input
         type="email"
         name="email"
         placeholder="Email"
@@ -133,7 +138,7 @@ export default function SignUpBox() {
         }}
       >
         Sign Up With Facebook
-      </button> */
+      </button> */}
     </div>
   );
 }

@@ -45,7 +45,17 @@
     top: -3rem;
 }
 
-.button {
+.sign_in_button {
+    background-color: #0077B6;
+    border-radius: 2rem;
+    color: #FFFFFF;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0 1rem;
+}
+
+.sign_in_with_button {
     background-color: #FFFFFF;
     box-shadow: none;
     text-transform: none;
@@ -77,11 +87,6 @@
     display: flex;
     align-items: center;
     margin-bottom: 0.8rem;
-}
-
-.register_link {
-    font-size: 1rem;
-    color: #0077B6;
 }
 
 .credentials_icon {
