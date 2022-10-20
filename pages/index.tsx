@@ -10,6 +10,7 @@ import HomeGrid from "../components/HomeGrid";
 import { useRecoilState } from "recoil";
 import { currentPageState } from "../atoms/currentPageState";
 import ModulePopup from "../components/ModulePopup";
+import OverviewPopup from "../components/OverviewPopup";
 
 import Quiz from "../components/quiz";
 import IslandImage from "../components/IslandImage";
@@ -52,7 +53,12 @@ const Home: NextPage = () => {
           content={content}
         />
       </div>
-
+      <h1>Overview test</h1>
+      <OverviewPopup
+        header="Overview index"
+        description="Testing overview"
+        initialToggled={false}
+      />
       <HomeGrid></HomeGrid>
       <ModulePopup></ModulePopup>
     </>
