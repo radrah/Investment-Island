@@ -7,25 +7,6 @@ const IslandImage = () => {
   const [header, setHeader] = useState("header default");
   const [description, setDescription] = useState("description default");
 
-  //   var showComponent = false;
-
-  //   const onPathClick = () => {
-  //     showComponent = !showComponent;
-  //     // alert(JSON.stringify(showComponent));
-  //   };
-
-  //   const showPopUp = () => {
-  //     {
-  //       showComponent ? (
-  //         <OverviewPopup
-  //           header="Overview"
-  //           description="Testing overview"
-  //           initialToggled={true}
-  //         ></OverviewPopup>
-  //       ) : null;
-  //     }
-  //   };
-
   return (
     <>
       {showComponent && (
@@ -47,13 +28,6 @@ const IslandImage = () => {
           <p className={styles.description}>{description}</p>
         </div>
       )}
-      {/* {showComponent && (
-        <OverviewPopup
-          header={header}
-          description={description}
-          initialToggled={false}
-        />
-      )} */}
       <div>
         <svg
           id="island-svg"
@@ -15713,29 +15687,21 @@ const IslandImage = () => {
           {/* These are the paths which have clickable interaction */}
           <path
             onClick={() => {
-              // onPathClick();
               setShowComponent(!showComponent);
               console.log(showComponent);
-              setHeader("header 1");
-              description = "description 1";
-              //   alert("property-plains");
+              setHeader("property plains overview");
+              setDescription("description");
             }}
             className="island-section-svg"
             id="property-plains-svg"
             d="m 432.33719,915.41818 c -231.39174,54.80331 -231.39174,54.80331 -231.39174,54.80331 l -38.56528,71.04131 -12.17852,58.8628 192.82645,52.7736 79.16033,-24.3571 121.78512,2.0298 97.4281,40.595 259.80827,16.2381 -36.53554,-66.9819 105.54711,-93.3686 -16.23802,-64.95202 26.38678,-46.6843 -73.07108,-36.53554 -26.38677,-26.38677 -54.80331,-4.05951 -22.32727,26.38678 -140.05289,6.08926 -213.12397,-62.92232 -32.47603,54.80331 z"
           />
-          {/* {showComponent ? (
-        <OverviewPopup
-          header="Overview"
-          description="Testing overview"
-          initialToggled={true}
-        ></OverviewPopup>
-      ) : null} */}
-
           <path
             onClick={() => {
               setShowComponent(!showComponent);
-              //   alert("crypto-coast");
+              console.log(showComponent);
+              setHeader("crypto coast overview");
+              setDescription("description");
             }}
             className="island-section-svg"
             id="crypto-coast-svg"
@@ -15743,7 +15709,10 @@ const IslandImage = () => {
           />
           <path
             onClick={() => {
-              alert("commodity-cave");
+              setShowComponent(!showComponent);
+              console.log(showComponent);
+              setHeader("commodity overview");
+              setDescription("description");
             }}
             className="island-section-svg"
             id="commodity-cave-svg"
@@ -15751,7 +15720,10 @@ const IslandImage = () => {
           />
           <path
             onClick={() => {
-              alert("forex-forest");
+              setShowComponent(!showComponent);
+              console.log(showComponent);
+              setHeader("forex forest overview");
+              setDescription("description");
             }}
             className="island-section-svg"
             id="forex-forest-svg"
@@ -15759,7 +15731,10 @@ const IslandImage = () => {
           />
           <path
             onClick={() => {
-              alert("time-tundra");
+              setShowComponent(!showComponent);
+              console.log(showComponent);
+              setHeader("time tundra overview");
+              setDescription("description");
             }}
             className="island-section-svg"
             id="time-tundra-svg"
@@ -15767,7 +15742,10 @@ const IslandImage = () => {
           />
           <path
             onClick={() => {
-              alert("stock-slopes");
+              setShowComponent(!showComponent);
+              console.log(showComponent);
+              setHeader("stock slopes overview");
+              setDescription("description");
             }}
             className="island-section-svg"
             id="stock-slopes-svg"
