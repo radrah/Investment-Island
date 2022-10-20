@@ -8,11 +8,10 @@ import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
 
 // Type definition for the props that are being passed in
-interface PopupProps {
-  header: string;
-  description?: string;
-  content?: ReactElement;
-  initialToggled?: boolean;
+interface ProfileProps {
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setUser: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 {
@@ -20,12 +19,11 @@ interface PopupProps {
 }
 
 // Background popup for investment island
-const Popup: NextPage = (props) => {
+const Popup: NextPage<ProfileProps> = (props) => {
+  const {open, setOpen, setUser} = props;
+
   // const [progress, setProgress] = React.useState(100);
   const progressNumber = 50;
-
-  // const { header, description, content, initialToggled } = props;
-  const [toggled, setToggled] = useState(false);
 
   const content = (
     <>
@@ -68,7 +66,10 @@ const Popup: NextPage = (props) => {
             <p> Enter new password </p>
           </Grid>
           {/* Log out button */}
-          <button onClick={() => {}}>Log out!</button>
+          <button onClick={() => {
+            setUser(false);
+            setOpen(false);
+            }}>Log out!</button>
         </Grid>
       </Grid>
     </>
@@ -77,16 +78,16 @@ const Popup: NextPage = (props) => {
   return (
     <div>
       <div className={styles.popup}>
-        {toggled && (
+        {open && (
           <div className={styles.popup_content}>
             <button
               className={styles.close_button}
-              onClick={() => setToggled(false)}
+              onClick={() => setOpen(false)}
             >
               <span
                 aria-hidden="true"
                 className={styles.close_span}
-                onClick={() => setToggled(false)}
+                onClick={() => setOpen(false)}
               >
                 &times;
               </span>
@@ -97,17 +98,6 @@ const Popup: NextPage = (props) => {
             {content}
           </div>
         )}
-
-        {
-          <div className="profileButton" onClick={() => setToggled(!toggled)}>
-            <div className="profileButtonPic">
-              <div className="imageCircle"></div>
-            </div>
-            <div className="profileButtonWords">
-              Sign in or Register to view progress!
-            </div>
-          </div>
-        }
       </div>
     </div>
   );

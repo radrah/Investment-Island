@@ -1,3 +1,4 @@
+import type { NextPage } from 'next'
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Typography from '@mui/material/Typography';
@@ -10,28 +11,35 @@ import createUser, {
 } from "../firebase/authCreateUser";
 import { useState } from "react";
 import styles from "./SignUpBox.module.css";
+import { setUserId } from 'firebase/analytics';
 
-export default function SignUpBox() {
+interface SignUpBoxProps {
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setUser: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const SignUpBox: NextPage<SignUpBoxProps> = props => {
   // pop up handler
-  const [open, setOpen] = useState(false);
+  const {open, setOpen, setUser} = props;
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   // sign in handler
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
 
-  const handleSignIn = () => {
-    createUser(email, password);
-    setEmail("");
-    setPassword("");
-  };
+  // const handleSignIn = () => {
+  //   createUser(email, password);
+  //   setEmail("");
+  //   setPassword("");
+  // };
+
+  // placeholder user
+  let user;
 
   return (
     <div>
-      // replace with sign up button
-      <Button className={styles.signup_button} onClick={handleOpen}>Sign in</Button>
-
       <Modal
         open={open}
         onClose={handleClose}
@@ -77,29 +85,34 @@ export default function SignUpBox() {
                   InputProps={{disableUnderline: true}}
                 />
             </div>
-            <Typography sx={{fontSize: '1.2rem'}}>Don't have an account?</Typography>
-            <Link
-              component="button"
-              variant="body1"
-              onClick={() => { }}
-              sx={{
-                fontWeight: 600,
-                fontSize: '1.2rem'
-              }}
-            >
-              Register here!
-            </Link>
+            <div>
+              <Typography display="inline" sx={{ fontSize: '1.2rem' }}>Don't have an account? </Typography>
+              <Link
+                component="button"
+                variant="body1"
+                color="#0077B6"
+                display="inline"
+                onClick={() => { }}
+                sx={{
+                  fontWeight: 600,
+                  fontSize: '1.2rem'
+                }}
+              >
+                Register here!
+              </Link>
+            </div>
+            <Button onClick={() => {setUser(true); setOpen(false);}} className={styles.sign_in_button}>Sign in</Button>
           </div>
 
-          <Button variant="contained" className={styles.button}>
+          <Button variant="contained" className={styles.sign_in_with_button}>
           <img src="assets/static/google.png" className={styles.logo}></img><span>Sign in with Google</span>
           </Button>
-          <Button variant="contained" className={styles.button}>
-          <img src="assets/static/facebook.png" className={styles.logo}></img><span>Sign in with Facebook</span>
+          <Button variant="contained" className={styles.sign_in_with_button}>
+            <img src="assets/static/facebook.png" className={styles.logo}></img><span>Sign in with Facebook</span>
           </Button>
         </div>
       </Modal>
-      /* <input
+      {/* <input
         type="email"
         name="email"
         placeholder="Email"
@@ -133,7 +146,9 @@ export default function SignUpBox() {
         }}
       >
         Sign Up With Facebook
-      </button> */
+      </button> */}
     </div>
   );
 }
+
+export default SignUpBox;
